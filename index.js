@@ -31,7 +31,7 @@ module.exports = function (configPath) {
 		try {
 			var errors = checker.checkString(file.contents.toString(), path.basename(file.path));
 			errors.getErrorList().forEach(function (err) {
-				out.push(errors.explainError(err, true));
+				out.push(errors.explainError(err));
 			});
 		} catch (err) {
 			out.push(err.message.replace('null:', file.relative + ':'));
