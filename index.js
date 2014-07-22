@@ -52,7 +52,7 @@ module.exports = function (options) {
 		try {
 			var errors = checker.checkString(file.contents.toString(), file.relative);
 			errors.getErrorList().forEach(function (err) {
-				out.push(errors.explainError(err, true));
+				out.push(errors.explainError(err));
 			});
 		} catch (err) {
 			out.push(err.message.replace('null:', file.relative + ':'));
